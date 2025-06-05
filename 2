@@ -1,0 +1,10 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_california_housing
+df = pd.DataFrame(fetch_california_housing().data, columns=fetch_california_housing().feature_names)
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.title('Correlation Matrix')
+plt.show()
+sns.pairplot(df) 
+plt.show()
